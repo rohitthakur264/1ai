@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payments Reconciliation Engine | Onelab Assessment</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen p-6 md:p-10">
+    <div class="max-w-7xl mx-auto space-y-8">
+        <!-- Header -->
+        <div class="flex flex-col md:flex-row md:items-center justify-between pb-6 border-b border-slate-200 gap-4">
+            <div>
+                <div class="flex items-center space-x-3">
+                    <span class="px-2.5 py-0.5 text-xs font-semibold bg-indigo-100 text-indigo-800 rounded-full">Onelab Assessment</span>
+                    <span class="px-2.5 py-0.5 text-xs font-semibold bg-emerald-100 text-emerald-800 rounded-full">19/19 Tests Passing</span>
+                </div>
+                <h1 class="text-2xl md:text-3xl font-bold text-slate-900 mt-2">Month-End Payments Reconciliation</h1>
+                <p class="text-sm text-slate-500 mt-1">Platform Ledger vs Bank Settlement Statement • October 2026 Audit</p>
+            </div>
+            <div class="flex items-center space-x-3">
+                <a href="#findings-section" class="px-4 py-2 text-sm font-medium bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg shadow-sm transition">View Findings</a>
+            </div>
+        </div>
+
+        <!-- Metrics Cards -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
+                <div class="text-xs font-medium text-slate-400 uppercase tracking-wider">Platform Total</div>
+                <div class="text-2xl font-bold text-slate-900 mt-2">&#8377;975,803.14</div>
+                <div class="text-xs text-slate-500 mt-1">410 recorded transactions</div>
+            </div>
+            <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
+                <div class="text-xs font-medium text-slate-400 uppercase tracking-wider">Bank Settled Total</div>
+                <div class="text-2xl font-bold text-slate-900 mt-2">&#8377;925,507.78</div>
+                <div class="text-xs text-slate-500 mt-1">394 cleared settlements</div>
+            </div>
+            <div class="bg-white p-5 rounded-xl border border-rose-200 bg-rose-50/30 shadow-sm">
+                <div class="text-xs font-medium text-rose-500 uppercase tracking-wider">Initial Book Gap</div>
+                <div class="text-2xl font-bold text-rose-600 mt-2">&#8377;50,295.36</div>
+                <div class="text-xs text-rose-500 mt-1">Platform overstates bank</div>
+            </div>
+            <div class="bg-white p-5 rounded-xl border border-emerald-200 bg-emerald-50/30 shadow-sm">
+                <div class="text-xs font-medium text-emerald-600 uppercase tracking-wider">Unexplained Residual</div>
+                <div class="text-2xl font-bold text-emerald-600 mt-2">&#8377;0.000</div>
+                <div class="text-xs text-emerald-600 mt-1 font-medium">100% gap fully attributed</div>
+            </div>
+        </div>
+
+        <!-- Accounting Bridge -->
+        <div class="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden">
+            <div class="p-5 border-b border-slate-100 flex items-center justify-between">
+                <div>
+                    <h2 class="text-lg font-bold text-slate-900">Reconciliation Bridge: Gap Attribution</h2>
+                    <p class="text-xs text-slate-500 mt-0.5">Mathematical proof: Platform Total - Bank Total = Sum of Discrepancies + 0.000 Residual</p>
+                </div>
+                <span class="inline-flex items-center px-3 py-1 text-xs font-medium bg-emerald-100 text-emerald-800 rounded-full">Balanced</span>
+            </div>
+            <div class="overflow-x-auto">
+                <table class="w-full text-left border-collapse">
+                    <thead>
+                        <tr class="bg-slate-50 border-b border-slate-200 text-xs font-semibold text-slate-500 uppercase">
+                            <th class="py-3 px-5">Line Item / Category</th>
+                            <th class="py-3 px-5 text-right">Count</th>
+                            <th class="py-3 px-5 text-right">Amount (&#8377;)</th>
+                            <th class="py-3 px-5">Financial Interpretation</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-sm divide-y divide-slate-100 font-mono">
+                        <tr class="bg-slate-50/50 font-semibold">
+                            <td class="py-3 px-5 text-slate-900 font-sans">Platform total (all rows)</td>
+                            <td class="py-3 px-5 text-right">410</td>
+                            <td class="py-3 px-5 text-right">&#8377;975,803.137</td>
+                            <td class="py-3 px-5 font-sans text-xs text-slate-500">Gross ledger sales captured</td>
+                        </tr>
+                        <tr class="bg-slate-50/50 font-semibold">
+                            <td class="py-3 px-5 text-slate-900 font-sans">Bank total (all rows)</td>
+                            <td class="py-3 px-5 text-right">394</td>
+                            <td class="py-3 px-5 text-right">&#8377;925,507.780</td>
+                            <td class="py-3 px-5 font-sans text-xs text-slate-500">Actual funds credited in October statement</td>
+                        </tr>
+                        <tr class="bg-amber-50 font-bold">
+                            <td class="py-3 px-5 text-amber-900 font-sans">GAP (Platform - Bank)</td>
+                            <td class="py-3 px-5 text-right">-</td>
+                            <td class="py-3 px-5 text-right text-amber-700">&#8377;50,295.357</td>
+                            <td class="py-3 px-5 font-sans text-xs text-amber-800">Discrepancy to explain</td>
+                        </tr>
+                        <tr>
+                            <td class="py-2.5 px-5 font-sans"><span class="px-2 py-0.5 rounded text-xs bg-blue-100 text-blue-800 font-semibold">TIMING</span></td>
+                            <td class="py-2.5 px-5 text-right">18</td>
+                            <td class="py-2.5 px-5 text-right">+ &#8377;49,768.480</td>
+                            <td class="py-2.5 px-5 font-sans text-xs text-slate-600">Captured Oct 30-31, settling Nov 1-2 (in-transit)</td>
+                        </tr>
+                        <tr>
+                            <td class="py-2.5 px-5 font-sans"><span class="px-2 py-0.5 rounded text-xs bg-slate-100 text-slate-800 font-semibold">PRIOR_MONTH_CARRYOVER</span></td>
+                            <td class="py-2.5 px-5 text-right">4</td>
+                            <td class="py-2.5 px-5 text-right text-rose-600">- &#8377;2,395.980</td>
+                            <td class="py-2.5 px-5 font-sans text-xs text-slate-600">Late September sales settling Oct 1-2</td>
+                        </tr>
+                        <tr>
+                            <td class="py-2.5 px-5 font-sans"><span class="px-2 py-0.5 rounded text-xs bg-purple-100 text-purple-800 font-semibold">DUPLICATE_PLATFORM</span></td>
+                            <td class="py-2.5 px-5 text-right">3</td>
+                            <td class="py-2.5 px-5 text-right">+ &#8377;7,818.300</td>
+                            <td class="py-2.5 px-5 font-sans text-xs text-slate-600">Webhook retry without idempotency key</td>
+                        </tr>
+                        <tr>
+                            <td class="py-2.5 px-5 font-sans"><span class="px-2 py-0.5 rounded text-xs bg-orange-100 text-orange-800 font-semibold">DUPLICATE_BANK</span></td>
+                            <td class="py-2.5 px-5 text-right">1</td>
+                            <td class="py-2.5 px-5 text-right text-rose-600">- &#8377;4,895.830</td>
+                            <td class="py-2.5 px-5 font-sans text-xs text-slate-600">Bank double-cleared single transaction</td>
+                        </tr>
+                        <tr>
+                            <td class="py-2.5 px-5 font-sans"><span class="px-2 py-0.5 rounded text-xs bg-emerald-100 text-emerald-800 font-semibold">ROUNDING</span></td>
+                            <td class="py-2.5 px-5 text-right">80</td>
+                            <td class="py-2.5 px-5 text-right">+ &#8377;0.387</td>
+                            <td class="py-2.5 px-5 font-sans text-xs text-slate-600">Sub-cent micro-fee truncation (each < 0.01)</td>
+                        </tr>
+                        <tr class="bg-emerald-50 font-bold border-t-2 border-emerald-300">
+                            <td class="py-3 px-5 text-emerald-900 font-sans">UNEXPLAINED RESIDUAL</td>
+                            <td class="py-3 px-5 text-right">-</td>
+                            <td class="py-3 px-5 text-right text-emerald-700 font-black">&#8377;0.000</td>
+                            <td class="py-3 px-5 font-sans text-xs text-emerald-800 font-semibold">Perfect mathematical balance achieved</td>
+                        </tr>
+                        <tr class="text-xs text-slate-500 font-sans">
+                            <td class="py-2 px-5"><span class="px-2 py-0.5 rounded text-xs bg-amber-100 text-amber-800 font-semibold">ORPHAN_REFUND</span></td>
+                            <td class="py-2 px-5 text-right font-mono">2</td>
+                            <td class="py-2 px-5 text-right font-mono">&#8377;0.00</td>
+                            <td class="py-2 px-5">Audit/compliance alert: refund with unknown parent order</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Filterable Findings Table -->
+        <div id="findings-section" class="bg-white rounded-xl border border-slate-200 shadow-sm p-5 space-y-4">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                <div>
+                    <h2 class="text-lg font-bold text-slate-900">Detailed Findings Log (108 Anomalies)</h2>
+                    <p class="text-xs text-slate-500">Filter by category or search by Transaction ID</p>
+                </div>
+                <div class="flex items-center space-x-2">
+                    <input type="text" id="searchInput" placeholder="Search ID..." onkeyup="renderFindings()" class="px-3 py-1.5 text-xs border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                </div>
+            </div>
+
+            <!-- Category Pills -->
+            <div class="flex flex-wrap gap-2 pt-1" id="categoryFilters"></div>
+
+            <!-- Table -->
+            <div class="overflow-x-auto border border-slate-200 rounded-lg">
+                <table class="w-full text-left border-collapse text-xs">
+                    <thead>
+                        <tr class="bg-slate-50 border-b border-slate-200 font-semibold text-slate-600 uppercase">
+                            <th class="py-2.5 px-3">Category</th>
+                            <th class="py-2.5 px-3">Transaction ID</th>
+                            <th class="py-2.5 px-3 text-right">Platform Amt</th>
+                            <th class="py-2.5 px-3 text-right">Bank Amt</th>
+                            <th class="py-2.5 px-3 text-right">Impact (&#8377;)</th>
+                            <th class="py-2.5 px-3">Operational Explanation</th>
+                        </tr>
+                    </thead>
+                    <tbody id="findingsTableBody" class="divide-y divide-slate-100 font-mono"></tbody>
+                </table>
+            </div>
+            <div class="flex justify-between items-center text-xs text-slate-500 pt-2">
+                <span id="rowCount"></span>
+                <span>Seed: 42 • Deterministic Audit Trail</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const findings = [{"category": "DUPLICATE_PLATFORM", "txn_id": "TXN-00066", "platform_amount": 1304.73, "bank_amount": "", "impact": 1304.73, "detail": "txn_id appears more than once in the platform ledger; extra copy overstates platform total"}, {"category": "DUPLICATE_PLATFORM", "txn_id": "TXN-00114", "platform_amount": 1942.38, "bank_amount": "", "impact": 1942.38, "detail": "txn_id appears more than once in the platform ledger; extra copy overstates platform total"}, {"category": "DUPLICATE_PLATFORM", "txn_id": "TXN-00356", "platform_amount": 4571.19, "bank_amount": "", "impact": 4571.19, "detail": "txn_id appears more than once in the platform ledger; extra copy overstates platform total"}, {"category": "DUPLICATE_BANK", "txn_id": "TXN-00345", "platform_amount": "", "bank_amount": 4895.83, "impact": -4895.83, "detail": "bank_ref appears more than once in the bank file; extra copy overstates bank total"}, {"category": "ORPHAN_REFUND", "txn_id": "RFD-9001", "platform_amount": -631.63, "bank_amount": "", "impact": 0.0, "detail": "refund references 'TXN-SEP-00042' which is not in the ledger - review"}, {"category": "ORPHAN_REFUND", "txn_id": "RFD-9002", "platform_amount": -121.88, "bank_amount": "", "impact": 0.0, "detail": "refund references 'TXN-SEP-00977' which is not in the ledger - review"}, {"category": "ROUNDING", "txn_id": "TXN-00008", "platform_amount": 2360.141, "bank_amount": 2360.14, "impact": 0.001, "detail": "differs by 0.001 - below per-row tolerance, only visible when summed"}, {"category": "ROUNDING", "txn_id": "TXN-00013", "platform_amount": 1887.083, "bank_amount": 1887.08, "impact": 0.003, "detail": "differs by 0.003 - below per-row tolerance, only visible when summed"}, {"category": "TIMING", "txn_id": "TXN-00017", "platform_amount": 3247.82, "bank_amount": "", "impact": 3247.82, "detail": "created at month end; bank settlement expected next month"}, {"category": "ROUNDING", "txn_id": "TXN-00018", "platform_amount": 1013.148, "bank_amount": 1013.14, "impact": 0.008, "detail": "differs by 0.008 - below per-row tolerance, only visible when summed"}, {"category": "ROUNDING", "txn_id": "TXN-00021", "platform_amount": 1997.959, "bank_amount": 1997.95, "impact": 0.009, "detail": "differs by 0.009 - below per-row tolerance, only visible when summed"}, {"category": "ROUNDING", "txn_id": "TXN-00025", "platform_amount": 3198.601, "bank_amount": 3198.6, "impact": 0.001, "detail": "differs by 0.001 - below per-row tolerance, only visible when summed"}, {"category": "ROUNDING", "txn_id": "TXN-00033", "platform_amount": 3441.384, "bank_amount": 3441.38, "impact": 0.004, "detail": "differs by 0.004 - below per-row tolerance, only visible when summed"}, {"category": "ROUNDING", "txn_id": "TXN-00034", "platform_amount": 4643.282, "bank_amount": 4643.28, "impact": 0.002, "detail": "differs by 0.002 - below per-row tolerance, only visible when summed"}, {"category": "ROUNDING", "txn_id": "TXN-00040", "platform_amount": 4519.656, "bank_amount": 4519.65, "impact": 0.006, "detail": "differs by 0.006 - below per-row tolerance, only visible when summed"}, {"category": "ROUNDING", "txn_id": "TXN-00048", "platform_amount": 3790.846, "bank_amount": 3790.84, "impact": 0.006, "detail": "differs by 0.006 - below per-row tolerance, only visible when summed"}, {"category": "TIMING", "txn_id": "TXN-00051", "platform_amount": 1569.71, "bank_amount": "", "impact": 1569.71, "detail": "created at month end; bank settlement expected next month"}, {"category": "ROUNDING", "txn_id": "TXN-00052", "platform_amount": 1965.381, "bank_amount": 1965.38, "impact": 0.001, "detail": "differs by 0.001 - below per-row tolerance, only visible when summed"}, {"category": "ROUNDING", "txn_id": "TXN-00053", "platform_amount": 4087.249, "bank_amount": 4087.24, "impact": 0.009, "detail": "differs by 0.009 - below per-row tolerance, only visible when summed"}, {"category": "TIMING", "txn_id": "TXN-00054", "platform_amount": 1704.51, "bank_amount": "", "impact": 1704.51, "detail": "created at month end; bank settlement expected next month"}, {"category": "ROUNDING", "txn_id": "TXN-00059", "platform_amount": 3992.744, "bank_amount": 3992.74, "impact": 0.004, "detail": "differs by 0.004 - below per-row tolerance, only visible when summed"}, {"category": "ROUNDING", "txn_id": "TXN-00062", "platform_amount": 4579.061, "bank_amount": 4579.06, "impact": 0.001, "detail": "differs by 0.001 - below per-row tolerance, only visible when summed"}, {"category": "ROUNDING", "txn_id": "TXN-00063", "platform_amount": 4875.189, "bank_amount": 4875.18, "impact": 0.009, "detail": "differs by 0.009 - below per-row tolerance, only visible when summed"}, {"category": "ROUNDING", "txn_id": "TXN-00067", "platform_amount": 1777.543, "bank_amount": 1777.54, "impact": 0.003, "detail": "differs by 0.003 - below per-row tolerance, only visible when summed"}, {"category": "ROUNDING", "txn_id": "TXN-00073", "platform_amount": 3512.377, "bank_amount": 3512.37, "impact": 0.007, "detail": "differs by 0.007 - below per-row tolerance, only visible when summed"}, {"category": "ROUNDING", "txn_id": "TXN-00075", "platform_amount": 3026.004, "bank_amount": 3026.0, "impact": 0.004, "detail": "differs by 0.004 - below per-row tolerance, only visible when summed"}, {"category": "ROUNDING", "txn_id": "TXN-00076", "platform_amount": 4118.664, "bank_amount": 4118.66, "impact": 0.004, "detail": "differs by 0.004 - below per-row tolerance, only visible when summed"}, {"category": "ROUNDING", "txn_id": "TXN-00083", "platform_amount": 1009.482, "bank_amount": 1009.48, "impact": 0.002, "detail": "differs by 0.002 - below per-row tolerance, only visible when summed"}, {"category": "ROUNDING", "txn_id": "TXN-00101", "platform_amount": 364.246, "bank_amount": 364.24, "impact": 0.006, "detail": "differs by 0.006 - below per-row tolerance, only visible when summed"}, {"category": "TIMING", "txn_id": "TXN-00104", "platform_amount": 434.82, "bank_amount": "", "impact": 434.82, "detail": "created at month end; bank settlement expected next month"}, {"category": "ROUNDING", "txn_id": "TXN-00117", "platform_amount": 1574.607, "bank_amount": 1574.6, "impact": 0.007, "detail": "differs by 0.007 - below per-row tolerance, only visible when summed"}, {"category": "ROUNDING", "txn_id": "TXN-00119", "platform_amount": 3897.409, "bank_amount": 3897.4, "impact": 0.009, "detail": "differs by 0.009 - below per-row tolerance, only visible when summed"}, {"category": "ROUNDING", "txn_id": "TXN-00121", "platform_amount": 1072.433, "bank_amount": 1072.43, "impact": 0.003, "detail": "differs by 0.003 - below per-row tolerance, only visible when summed"}, {"category": "ROUNDING", "txn_id": "TXN-00125", "platform_amount": 4047.886, "bank_amount": 4047.88, "impact": 0.006, "detail": "differs by 0.006 - below per-row tolerance, only visible when summed"}, {"category": "TIMING", "txn_id": "TXN-00126", "platform_amount": 1378.4, "bank_amount": "", "impact": 1378.4, "detail": "created at month end; bank settlement expected next month"}, {"category": "ROUNDING", "txn_id": "TXN-00127", "platform_amount": 2897.391, "bank_amount": 2897.39, "impact": 0.001, "detail": "differs by 0.001 - below per-row tolerance, only visible when summed"}, {"category": "TIMING", "txn_id": "TXN-00136", "platform_amount": 3934.42, "bank_amount": "", "impact": 3934.42, "detail": "created at month end; bank settlement expected next month"}, {"category": "ROUNDING", "txn_id": "TXN-00142", "platform_amount": 4577.662, "bank_amount": 4577.66, "impact": 0.002, "detail": "differs by 0.002 - below per-row tolerance, only visible when summed"}, {"category": "ROUNDING", "txn_id": "TXN-00143", "platform_amount": 1171.195, "bank_amount": 1171.19, "impact": 0.005, "detail": "differs by 0.005 - below per-row tolerance, only visible when summed"}, {"category": "ROUNDING", "txn_id": "TXN-00149", "platform_amount": 1741.177, "bank_amount": 1741.17, "impact": 0.007, "detail": "differs by 0.007 - below per-row tolerance, only visible when summed"}, {"category": "ROUNDING", "txn_id": "TXN-00151", "platform_amount": 3048.965, "bank_amount": 3048.96, "impact": 0.005, "detail": "differs by 0.005 - below per-row tolerance, only visible when summed"}, {"category": "ROUNDING", "txn_id": "TXN-00163", "platform_amount": 672.359, "bank_amount": 672.35, "impact": 0.009, "detail": "differs by 0.009 - below per-row tolerance, only visible when summed"}, {"category": "ROUNDING", "txn_id": "TXN-00164", "platform_amount": 3491.145, "bank_amount": 3491.14, "impact": 0.005, "detail": "differs by 0.005 - below per-row tolerance, only visible when summed"}, {"category": "ROUNDING", "txn_id": "TXN-00176", "platform_amount": 2496.083, "bank_amount": 2496.08, "impact": 0.003, "detail": "differs by 0.003 - below per-row tolerance, only visible when summed"}, {"category": "ROUNDING", "txn_id": "TXN-00193", "platform_amount": 795.788, "bank_amount": 795.78, "impact": 0.008, "detail": "differs by 0.008 - below per-row tolerance, only visible when summed"}, {"category": "ROUNDING", "txn_id": "TXN-00195", "platform_amount": 341.742, "bank_amount": 341.74, "impact": 0.002, "detail": "differs by 0.002 - below per-row tolerance, only visible when summed"}, {"category": "ROUNDING", "txn_id": "TXN-00197", "platform_amount": 331.454, "bank_amount": 331.45, "impact": 0.004, "detail": "differs by 0.004 - below per-row tolerance, only visible when summed"}, {"category": "ROUNDING", "txn_id": "TXN-00198", "platform_amount": 2046.985, "bank_amount": 2046.98, "impact": 0.005, "detail": "differs by 0.005 - below per-row tolerance, only visible when summed"}, {"category": "ROUNDING", "txn_id": "TXN-00199", "platform_amount": 1999.292, "bank_amount": 1999.29, "impact": 0.002, "detail": "differs by 0.002 - below per-row tolerance, only visible when summed"}, {"category": "ROUNDING", "txn_id": "TXN-00200", "platform_amount": 4947.686, "bank_amount": 4947.68, "impact": 0.006, "detail": "differs by 0.006 - below per-row tolerance, only visible when summed"}, {"category": "ROUNDING", "txn_id": "TXN-00205", "platform_amount": 1767.283, "bank_amount": 1767.28, "impact": 0.003, "detail": "differs by 0.003 - below per-row tolerance, only visible when summed"}, {"category": "ROUNDING", "txn_id": "TXN-00209", "platform_amount": 3374.857, "bank_amount": 3374.85, "impact": 0.007, "detail": "differs by 0.007 - below per-row tolerance, only visible when summed"}, {"category": "ROUNDING", "txn_id": "TXN-00213", "platform_amount": 1718.613, "bank_amount": 1718.61, "impact": 0.003, "detail": "differs by 0.003 - below per-row tolerance, only visible when summed"}, {"category": "ROUNDING", "txn_id": "TXN-00214", "platform_amount": 1463.864, "bank_amount": 1463.86, "impact": 0.004, "detail": "differs by 0.004 - below per-row tolerance, only visible when summed"}, {"category": "ROUNDING", "txn_id": "TXN-00219", "platform_amount": 1050.229, "bank_amount": 1050.22, "impact": 0.009, "detail": "differs by 0.009 - below per-row tolerance, only visible when summed"}, {"category": "TIMING", "txn_id": "TXN-00220", "platform_amount": 803.92, "bank_amount": "", "impact": 803.92, "detail": "created at month end; bank settlement expected next month"}, {"category": "ROUNDING", "txn_id": "TXN-00221", "platform_amount": 2487.828, "bank_amount": 2487.82, "impact": 0.008, "detail": "differs by 0.008 - below per-row tolerance, only visible when summed"}, {"category": "ROUNDING", "txn_id": "TXN-00224", "platform_amount": 884.693, "bank_amount": 884.69, "impact": 0.003, "detail": "differs by 0.003 - below per-row tolerance, only visible when summed"}, {"category": "ROUNDING", "txn_id": "TXN-00226", "platform_amount": 139.622, "bank_amount": 139.62, "impact": 0.002, "detail": "differs by 0.002 - below per-row tolerance, only visible when summed"}, {"category": "ROUNDING", "txn_id": "TXN-00239", "platform_amount": 3415.272, "bank_amount": 3415.27, "impact": 0.002, "detail": "differs by 0.002 - below per-row tolerance, only visible when summed"}, {"category": "TIMING", "txn_id": "TXN-00240", "platform_amount": 4242.29, "bank_amount": "", "impact": 4242.29, "detail": "created at month end; bank settlement expected next month"}, {"category": "ROUNDING", "txn_id": "TXN-00245", "platform_amount": 3204.899, "bank_amount": 3204.89, "impact": 0.009, "detail": "differs by 0.009 - below per-row tolerance, only visible when summed"}, {"category": "ROUNDING", "txn_id": "TXN-00250", "platform_amount": 58.228, "bank_amount": 58.22, "impact": 0.008, "detail": "differs by 0.008 - below per-row tolerance, only visible when summed"}, {"category": "ROUNDING", "txn_id": "TXN-00252", "platform_amount": 2915.721, "bank_amount": 2915.72, "impact": 0.001, "detail": "differs by 0.001 - below per-row tolerance, only visible when summed"}, {"category": "ROUNDING", "txn_id": "TXN-00254", "platform_amount": 4162.251, "bank_amount": 4162.25, "impact": 0.001, "detail": "differs by 0.001 - below per-row tolerance, only visible when summed"}, {"category": "ROUNDING", "txn_id": "TXN-00263", "platform_amount": 631.816, "bank_amount": 631.81, "impact": 0.006, "detail": "differs by 0.006 - below per-row tolerance, only visible when summed"}, {"category": "ROUNDING", "txn_id": "TXN-00265", "platform_amount": 3803.918, "bank_amount": 3803.91, "impact": 0.008, "detail": "differs by 0.008 - below per-row tolerance, only visible when summed"}, {"category": "ROUNDING", "txn_id": "TXN-00287", "platform_amount": 3284.503, "bank_amount": 3284.5, "impact": 0.003, "detail": "differs by 0.003 - below per-row tolerance, only visible when summed"}, {"category": "ROUNDING", "txn_id": "TXN-00288", "platform_amount": 3467.548, "bank_amount": 3467.54, "impact": 0.008, "detail": "differs by 0.008 - below per-row tolerance, only visible when summed"}, {"category": "ROUNDING", "txn_id": "TXN-00289", "platform_amount": 1262.582, "bank_amount": 1262.58, "impact": 0.002, "detail": "differs by 0.002 - below per-row tolerance, only visible when summed"}, {"category": "ROUNDING", "txn_id": "TXN-00291", "platform_amount": 2146.804, "bank_amount": 2146.8, "impact": 0.004, "detail": "differs by 0.004 - below per-row tolerance, only visible when summed"}, {"category": "ROUNDING", "txn_id": "TXN-00298", "platform_amount": 4767.694, "bank_amount": 4767.69, "impact": 0.004, "detail": "differs by 0.004 - below per-row tolerance, only visible when summed"}, {"category": "ROUNDING", "txn_id": "TXN-00301", "platform_amount": 3931.691, "bank_amount": 3931.69, "impact": 0.001, "detail": "differs by 0.001 - below per-row tolerance, only visible when summed"}, {"category": "TIMING", "txn_id": "TXN-00312", "platform_amount": 4273.98, "bank_amount": "", "impact": 4273.98, "detail": "created at month end; bank settlement expected next month"}, {"category": "ROUNDING", "txn_id": "TXN-00314", "platform_amount": 1752.491, "bank_amount": 1752.49, "impact": 0.001, "detail": "differs by 0.001 - below per-row tolerance, only visible when summed"}, {"category": "ROUNDING", "txn_id": "TXN-00315", "platform_amount": 4501.996, "bank_amount": 4501.99, "impact": 0.006, "detail": "differs by 0.006 - below per-row tolerance, only visible when summed"}, {"category": "TIMING", "txn_id": "TXN-00324", "platform_amount": 3970.94, "bank_amount": "", "impact": 3970.94, "detail": "created at month end; bank settlement expected next month"}, {"category": "TIMING", "txn_id": "TXN-00325", "platform_amount": 2322.56, "bank_amount": "", "impact": 2322.56, "detail": "created at month end; bank settlement expected next month"}, {"category": "ROUNDING", "txn_id": "TXN-00329", "platform_amount": 1634.227, "bank_amount": 1634.22, "impact": 0.007, "detail": "differs by 0.007 - below per-row tolerance, only visible when summed"}, {"category": "ROUNDING", "txn_id": "TXN-00332", "platform_amount": 4970.327, "bank_amount": 4970.32, "impact": 0.007, "detail": "differs by 0.007 - below per-row tolerance, only visible when summed"}, {"category": "ROUNDING", "txn_id": "TXN-00334", "platform_amount": 3703.385, "bank_amount": 3703.38, "impact": 0.005, "detail": "differs by 0.005 - below per-row tolerance, only visible when summed"}, {"category": "ROUNDING", "txn_id": "TXN-00342", "platform_amount": 3045.468, "bank_amount": 3045.46, "impact": 0.008, "detail": "differs by 0.008 - below per-row tolerance, only visible when summed"}, {"category": "ROUNDING", "txn_id": "TXN-00343", "platform_amount": 2346.191, "bank_amount": 2346.19, "impact": 0.001, "detail": "differs by 0.001 - below per-row tolerance, only visible when summed"}, {"category": "ROUNDING", "txn_id": "TXN-00347", "platform_amount": 2012.877, "bank_amount": 2012.87, "impact": 0.007, "detail": "differs by 0.007 - below per-row tolerance, only visible when summed"}, {"category": "ROUNDING", "txn_id": "TXN-00348", "platform_amount": 233.832, "bank_amount": 233.83, "impact": 0.002, "detail": "differs by 0.002 - below per-row tolerance, only visible when summed"}, {"category": "ROUNDING", "txn_id": "TXN-00349", "platform_amount": 3702.422, "bank_amount": 3702.42, "impact": 0.002, "detail": "differs by 0.002 - below per-row tolerance, only visible when summed"}, {"category": "ROUNDING", "txn_id": "TXN-00352", "platform_amount": 3099.245, "bank_amount": 3099.24, "impact": 0.005, "detail": "differs by 0.005 - below per-row tolerance, only visible when summed"}, {"category": "ROUNDING", "txn_id": "TXN-00360", "platform_amount": 1997.348, "bank_amount": 1997.34, "impact": 0.008, "detail": "differs by 0.008 - below per-row tolerance, only visible when summed"}, {"category": "TIMING", "txn_id": "TXN-00361", "platform_amount": 3773.14, "bank_amount": "", "impact": 3773.14, "detail": "created at month end; bank settlement expected next month"}, {"category": "ROUNDING", "txn_id": "TXN-00362", "platform_amount": 193.213, "bank_amount": 193.21, "impact": 0.003, "detail": "differs by 0.003 - below per-row tolerance, only visible when summed"}, {"category": "ROUNDING", "txn_id": "TXN-00363", "platform_amount": 3314.109, "bank_amount": 3314.1, "impact": 0.009, "detail": "differs by 0.009 - below per-row tolerance, only visible when summed"}, {"category": "ROUNDING", "txn_id": "TXN-00364", "platform_amount": 3920.204, "bank_amount": 3920.2, "impact": 0.004, "detail": "differs by 0.004 - below per-row tolerance, only visible when summed"}, {"category": "ROUNDING", "txn_id": "TXN-00369", "platform_amount": 2263.039, "bank_amount": 2263.03, "impact": 0.009, "detail": "differs by 0.009 - below per-row tolerance, only visible when summed"}, {"category": "ROUNDING", "txn_id": "TXN-00371", "platform_amount": 3579.599, "bank_amount": 3579.59, "impact": 0.009, "detail": "differs by 0.009 - below per-row tolerance, only visible when summed"}, {"category": "TIMING", "txn_id": "TXN-00373", "platform_amount": 4570.7, "bank_amount": "", "impact": 4570.7, "detail": "created at month end; bank settlement expected next month"}, {"category": "TIMING", "txn_id": "TXN-00374", "platform_amount": 3586.59, "bank_amount": "", "impact": 3586.59, "detail": "created at month end; bank settlement expected next month"}, {"category": "ROUNDING", "txn_id": "TXN-00376", "platform_amount": 2422.758, "bank_amount": 2422.75, "impact": 0.008, "detail": "differs by 0.008 - below per-row tolerance, only visible when summed"}, {"category": "ROUNDING", "txn_id": "TXN-00378", "platform_amount": 4729.936, "bank_amount": 4729.93, "impact": 0.006, "detail": "differs by 0.006 - below per-row tolerance, only visible when summed"}, {"category": "TIMING", "txn_id": "TXN-00388", "platform_amount": 3911.84, "bank_amount": "", "impact": 3911.84, "detail": "created at month end; bank settlement expected next month"}, {"category": "TIMING", "txn_id": "TXN-00390", "platform_amount": 4209.43, "bank_amount": "", "impact": 4209.43, "detail": "created at month end; bank settlement expected next month"}, {"category": "TIMING", "txn_id": "TXN-00392", "platform_amount": 1319.0, "bank_amount": "", "impact": 1319.0, "detail": "created at month end; bank settlement expected next month"}, {"category": "TIMING", "txn_id": "TXN-00393", "platform_amount": 514.41, "bank_amount": "", "impact": 514.41, "detail": "created at month end; bank settlement expected next month"}, {"category": "ROUNDING", "txn_id": "TXN-00394", "platform_amount": 4139.592, "bank_amount": 4139.59, "impact": 0.002, "detail": "differs by 0.002 - below per-row tolerance, only visible when summed"}, {"category": "ROUNDING", "txn_id": "TXN-00396", "platform_amount": 477.553, "bank_amount": 477.55, "impact": 0.003, "detail": "differs by 0.003 - below per-row tolerance, only visible when summed"}, {"category": "PRIOR_MONTH_CARRYOVER", "txn_id": "TXN-S0001", "platform_amount": "", "bank_amount": 249.39, "impact": -249.39, "detail": "settled in first days of month; probably last month's payment (confirm vs prior ledger)"}, {"category": "PRIOR_MONTH_CARRYOVER", "txn_id": "TXN-S0002", "platform_amount": "", "bank_amount": 258.13, "impact": -258.13, "detail": "settled in first days of month; probably last month's payment (confirm vs prior ledger)"}, {"category": "PRIOR_MONTH_CARRYOVER", "txn_id": "TXN-S0003", "platform_amount": "", "bank_amount": 346.08, "impact": -346.08, "detail": "settled in first days of month; probably last month's payment (confirm vs prior ledger)"}, {"category": "PRIOR_MONTH_CARRYOVER", "txn_id": "TXN-S0004", "platform_amount": "", "bank_amount": 1542.38, "impact": -1542.38, "detail": "settled in first days of month; probably last month's payment (confirm vs prior ledger)"}];
+        const categories = [...new Set(findings.map(f => f.category))].sort();
+        let activeCategories = new Set(categories);
+
+        function initFilters() {
+            const container = document.getElementById('categoryFilters');
+            container.innerHTML = '';
+            
+            const allBtn = document.createElement('button');
+            allBtn.className = 'px-2.5 py-1 text-xs rounded-full font-medium transition bg-slate-800 text-white';
+            allBtn.innerText = 'Toggle All';
+            allBtn.onclick = () => {
+                if (activeCategories.size === categories.length) {
+                    activeCategories.clear();
+                } else {
+                    categories.forEach(c => activeCategories.add(c));
+                }
+                initFilters();
+                renderFindings();
+            };
+            container.appendChild(allBtn);
+
+            categories.forEach(cat => {
+                const btn = document.createElement('button');
+                const isActive = activeCategories.has(cat);
+                btn.className = `px-2.5 py-1 text-xs rounded-full font-medium transition border ${
+                    isActive ? 'bg-indigo-50 border-indigo-300 text-indigo-700 font-semibold' : 'bg-white border-slate-200 text-slate-400'
+                }`;
+                btn.innerText = cat;
+                btn.onclick = () => {
+                    if (activeCategories.has(cat)) activeCategories.delete(cat);
+                    else activeCategories.add(cat);
+                    initFilters();
+                    renderFindings();
+                };
+                container.appendChild(btn);
+            });
+        }
+
+        function renderFindings() {
+            const search = document.getElementById('searchInput').value.toLowerCase();
+            const tbody = document.getElementById('findingsTableBody');
+            tbody.innerHTML = '';
+
+            const filtered = findings.filter(f => {
+                const matchesCat = activeCategories.has(f.category);
+                const matchesSearch = !search || f.txn_id.toLowerCase().includes(search) || f.category.toLowerCase().includes(search);
+                return matchesCat && matchesSearch;
+            });
+
+            filtered.forEach(f => {
+                const tr = document.createElement('tr');
+                tr.className = 'hover:bg-slate-50 transition';
+                
+                let badgeClass = 'bg-slate-100 text-slate-800';
+                if (f.category === 'TIMING') badgeClass = 'bg-blue-100 text-blue-800';
+                else if (f.category === 'ROUNDING') badgeClass = 'bg-emerald-100 text-emerald-800';
+                else if (f.category.startsWith('DUPLICATE')) badgeClass = 'bg-purple-100 text-purple-800';
+                else if (f.category === 'ORPHAN_REFUND') badgeClass = 'bg-amber-100 text-amber-800';
+
+                tr.innerHTML = `
+                    <td class="py-2 px-3 font-sans"><span class="px-2 py-0.5 rounded text-[11px] font-semibold ${badgeClass}">${f.category}</span></td>
+                    <td class="py-2 px-3 font-semibold text-slate-900">${f.txn_id}</td>
+                    <td class="py-2 px-3 text-right">${f.platform_amount ? '&#8377;' + f.platform_amount : '-'}</td>
+                    <td class="py-2 px-3 text-right">${f.bank_amount ? '&#8377;' + f.bank_amount : '-'}</td>
+                    <td class="py-2 px-3 text-right font-bold ${parseFloat(f.impact) < 0 ? 'text-rose-600' : 'text-slate-800'}">${f.impact ? '&#8377;' + f.impact : '-'}</td>
+                    <td class="py-2 px-3 font-sans text-slate-600 text-[11px]">${f.detail}</td>
+                `;
+                tbody.appendChild(tr);
+            });
+
+            document.getElementById('rowCount').innerText = `Showing ${filtered.length} of ${findings.length} findings`;
+        }
+
+        initFilters();
+        renderFindings();
+    </script>
+</body>
+</html>

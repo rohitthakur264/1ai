@@ -1,0 +1,109 @@
+category,txn_id,platform_amount,bank_amount,impact,detail
+DUPLICATE_PLATFORM,TXN-00066,1304.73,,1304.73,txn_id appears more than once in the platform ledger; extra copy overstates platform total
+DUPLICATE_PLATFORM,TXN-00114,1942.38,,1942.38,txn_id appears more than once in the platform ledger; extra copy overstates platform total
+DUPLICATE_PLATFORM,TXN-00356,4571.19,,4571.19,txn_id appears more than once in the platform ledger; extra copy overstates platform total
+DUPLICATE_BANK,TXN-00345,,4895.83,-4895.83,bank_ref appears more than once in the bank file; extra copy overstates bank total
+ORPHAN_REFUND,RFD-9001,-631.63,,0,refund references 'TXN-SEP-00042' which is not in the ledger - review
+ORPHAN_REFUND,RFD-9002,-121.88,,0,refund references 'TXN-SEP-00977' which is not in the ledger - review
+ROUNDING,TXN-00008,2360.141,2360.14,0.001,"differs by 0.001 - below per-row tolerance, only visible when summed"
+ROUNDING,TXN-00013,1887.083,1887.08,0.003,"differs by 0.003 - below per-row tolerance, only visible when summed"
+TIMING,TXN-00017,3247.82,,3247.82,created at month end; bank settlement expected next month
+ROUNDING,TXN-00018,1013.148,1013.14,0.008,"differs by 0.008 - below per-row tolerance, only visible when summed"
+ROUNDING,TXN-00021,1997.959,1997.95,0.009,"differs by 0.009 - below per-row tolerance, only visible when summed"
+ROUNDING,TXN-00025,3198.601,3198.60,0.001,"differs by 0.001 - below per-row tolerance, only visible when summed"
+ROUNDING,TXN-00033,3441.384,3441.38,0.004,"differs by 0.004 - below per-row tolerance, only visible when summed"
+ROUNDING,TXN-00034,4643.282,4643.28,0.002,"differs by 0.002 - below per-row tolerance, only visible when summed"
+ROUNDING,TXN-00040,4519.656,4519.65,0.006,"differs by 0.006 - below per-row tolerance, only visible when summed"
+ROUNDING,TXN-00048,3790.846,3790.84,0.006,"differs by 0.006 - below per-row tolerance, only visible when summed"
+TIMING,TXN-00051,1569.71,,1569.71,created at month end; bank settlement expected next month
+ROUNDING,TXN-00052,1965.381,1965.38,0.001,"differs by 0.001 - below per-row tolerance, only visible when summed"
+ROUNDING,TXN-00053,4087.249,4087.24,0.009,"differs by 0.009 - below per-row tolerance, only visible when summed"
+TIMING,TXN-00054,1704.51,,1704.51,created at month end; bank settlement expected next month
+ROUNDING,TXN-00059,3992.744,3992.74,0.004,"differs by 0.004 - below per-row tolerance, only visible when summed"
+ROUNDING,TXN-00062,4579.061,4579.06,0.001,"differs by 0.001 - below per-row tolerance, only visible when summed"
+ROUNDING,TXN-00063,4875.189,4875.18,0.009,"differs by 0.009 - below per-row tolerance, only visible when summed"
+ROUNDING,TXN-00067,1777.543,1777.54,0.003,"differs by 0.003 - below per-row tolerance, only visible when summed"
+ROUNDING,TXN-00073,3512.377,3512.37,0.007,"differs by 0.007 - below per-row tolerance, only visible when summed"
+ROUNDING,TXN-00075,3026.004,3026.00,0.004,"differs by 0.004 - below per-row tolerance, only visible when summed"
+ROUNDING,TXN-00076,4118.664,4118.66,0.004,"differs by 0.004 - below per-row tolerance, only visible when summed"
+ROUNDING,TXN-00083,1009.482,1009.48,0.002,"differs by 0.002 - below per-row tolerance, only visible when summed"
+ROUNDING,TXN-00101,364.246,364.24,0.006,"differs by 0.006 - below per-row tolerance, only visible when summed"
+TIMING,TXN-00104,434.82,,434.82,created at month end; bank settlement expected next month
+ROUNDING,TXN-00117,1574.607,1574.60,0.007,"differs by 0.007 - below per-row tolerance, only visible when summed"
+ROUNDING,TXN-00119,3897.409,3897.40,0.009,"differs by 0.009 - below per-row tolerance, only visible when summed"
+ROUNDING,TXN-00121,1072.433,1072.43,0.003,"differs by 0.003 - below per-row tolerance, only visible when summed"
+ROUNDING,TXN-00125,4047.886,4047.88,0.006,"differs by 0.006 - below per-row tolerance, only visible when summed"
+TIMING,TXN-00126,1378.40,,1378.40,created at month end; bank settlement expected next month
+ROUNDING,TXN-00127,2897.391,2897.39,0.001,"differs by 0.001 - below per-row tolerance, only visible when summed"
+TIMING,TXN-00136,3934.42,,3934.42,created at month end; bank settlement expected next month
+ROUNDING,TXN-00142,4577.662,4577.66,0.002,"differs by 0.002 - below per-row tolerance, only visible when summed"
+ROUNDING,TXN-00143,1171.195,1171.19,0.005,"differs by 0.005 - below per-row tolerance, only visible when summed"
+ROUNDING,TXN-00149,1741.177,1741.17,0.007,"differs by 0.007 - below per-row tolerance, only visible when summed"
+ROUNDING,TXN-00151,3048.965,3048.96,0.005,"differs by 0.005 - below per-row tolerance, only visible when summed"
+ROUNDING,TXN-00163,672.359,672.35,0.009,"differs by 0.009 - below per-row tolerance, only visible when summed"
+ROUNDING,TXN-00164,3491.145,3491.14,0.005,"differs by 0.005 - below per-row tolerance, only visible when summed"
+ROUNDING,TXN-00176,2496.083,2496.08,0.003,"differs by 0.003 - below per-row tolerance, only visible when summed"
+ROUNDING,TXN-00193,795.788,795.78,0.008,"differs by 0.008 - below per-row tolerance, only visible when summed"
+ROUNDING,TXN-00195,341.742,341.74,0.002,"differs by 0.002 - below per-row tolerance, only visible when summed"
+ROUNDING,TXN-00197,331.454,331.45,0.004,"differs by 0.004 - below per-row tolerance, only visible when summed"
+ROUNDING,TXN-00198,2046.985,2046.98,0.005,"differs by 0.005 - below per-row tolerance, only visible when summed"
+ROUNDING,TXN-00199,1999.292,1999.29,0.002,"differs by 0.002 - below per-row tolerance, only visible when summed"
+ROUNDING,TXN-00200,4947.686,4947.68,0.006,"differs by 0.006 - below per-row tolerance, only visible when summed"
+ROUNDING,TXN-00205,1767.283,1767.28,0.003,"differs by 0.003 - below per-row tolerance, only visible when summed"
+ROUNDING,TXN-00209,3374.857,3374.85,0.007,"differs by 0.007 - below per-row tolerance, only visible when summed"
+ROUNDING,TXN-00213,1718.613,1718.61,0.003,"differs by 0.003 - below per-row tolerance, only visible when summed"
+ROUNDING,TXN-00214,1463.864,1463.86,0.004,"differs by 0.004 - below per-row tolerance, only visible when summed"
+ROUNDING,TXN-00219,1050.229,1050.22,0.009,"differs by 0.009 - below per-row tolerance, only visible when summed"
+TIMING,TXN-00220,803.92,,803.92,created at month end; bank settlement expected next month
+ROUNDING,TXN-00221,2487.828,2487.82,0.008,"differs by 0.008 - below per-row tolerance, only visible when summed"
+ROUNDING,TXN-00224,884.693,884.69,0.003,"differs by 0.003 - below per-row tolerance, only visible when summed"
+ROUNDING,TXN-00226,139.622,139.62,0.002,"differs by 0.002 - below per-row tolerance, only visible when summed"
+ROUNDING,TXN-00239,3415.272,3415.27,0.002,"differs by 0.002 - below per-row tolerance, only visible when summed"
+TIMING,TXN-00240,4242.29,,4242.29,created at month end; bank settlement expected next month
+ROUNDING,TXN-00245,3204.899,3204.89,0.009,"differs by 0.009 - below per-row tolerance, only visible when summed"
+ROUNDING,TXN-00250,58.228,58.22,0.008,"differs by 0.008 - below per-row tolerance, only visible when summed"
+ROUNDING,TXN-00252,2915.721,2915.72,0.001,"differs by 0.001 - below per-row tolerance, only visible when summed"
+ROUNDING,TXN-00254,4162.251,4162.25,0.001,"differs by 0.001 - below per-row tolerance, only visible when summed"
+ROUNDING,TXN-00263,631.816,631.81,0.006,"differs by 0.006 - below per-row tolerance, only visible when summed"
+ROUNDING,TXN-00265,3803.918,3803.91,0.008,"differs by 0.008 - below per-row tolerance, only visible when summed"
+ROUNDING,TXN-00287,3284.503,3284.50,0.003,"differs by 0.003 - below per-row tolerance, only visible when summed"
+ROUNDING,TXN-00288,3467.548,3467.54,0.008,"differs by 0.008 - below per-row tolerance, only visible when summed"
+ROUNDING,TXN-00289,1262.582,1262.58,0.002,"differs by 0.002 - below per-row tolerance, only visible when summed"
+ROUNDING,TXN-00291,2146.804,2146.80,0.004,"differs by 0.004 - below per-row tolerance, only visible when summed"
+ROUNDING,TXN-00298,4767.694,4767.69,0.004,"differs by 0.004 - below per-row tolerance, only visible when summed"
+ROUNDING,TXN-00301,3931.691,3931.69,0.001,"differs by 0.001 - below per-row tolerance, only visible when summed"
+TIMING,TXN-00312,4273.98,,4273.98,created at month end; bank settlement expected next month
+ROUNDING,TXN-00314,1752.491,1752.49,0.001,"differs by 0.001 - below per-row tolerance, only visible when summed"
+ROUNDING,TXN-00315,4501.996,4501.99,0.006,"differs by 0.006 - below per-row tolerance, only visible when summed"
+TIMING,TXN-00324,3970.94,,3970.94,created at month end; bank settlement expected next month
+TIMING,TXN-00325,2322.56,,2322.56,created at month end; bank settlement expected next month
+ROUNDING,TXN-00329,1634.227,1634.22,0.007,"differs by 0.007 - below per-row tolerance, only visible when summed"
+ROUNDING,TXN-00332,4970.327,4970.32,0.007,"differs by 0.007 - below per-row tolerance, only visible when summed"
+ROUNDING,TXN-00334,3703.385,3703.38,0.005,"differs by 0.005 - below per-row tolerance, only visible when summed"
+ROUNDING,TXN-00342,3045.468,3045.46,0.008,"differs by 0.008 - below per-row tolerance, only visible when summed"
+ROUNDING,TXN-00343,2346.191,2346.19,0.001,"differs by 0.001 - below per-row tolerance, only visible when summed"
+ROUNDING,TXN-00347,2012.877,2012.87,0.007,"differs by 0.007 - below per-row tolerance, only visible when summed"
+ROUNDING,TXN-00348,233.832,233.83,0.002,"differs by 0.002 - below per-row tolerance, only visible when summed"
+ROUNDING,TXN-00349,3702.422,3702.42,0.002,"differs by 0.002 - below per-row tolerance, only visible when summed"
+ROUNDING,TXN-00352,3099.245,3099.24,0.005,"differs by 0.005 - below per-row tolerance, only visible when summed"
+ROUNDING,TXN-00360,1997.348,1997.34,0.008,"differs by 0.008 - below per-row tolerance, only visible when summed"
+TIMING,TXN-00361,3773.14,,3773.14,created at month end; bank settlement expected next month
+ROUNDING,TXN-00362,193.213,193.21,0.003,"differs by 0.003 - below per-row tolerance, only visible when summed"
+ROUNDING,TXN-00363,3314.109,3314.10,0.009,"differs by 0.009 - below per-row tolerance, only visible when summed"
+ROUNDING,TXN-00364,3920.204,3920.20,0.004,"differs by 0.004 - below per-row tolerance, only visible when summed"
+ROUNDING,TXN-00369,2263.039,2263.03,0.009,"differs by 0.009 - below per-row tolerance, only visible when summed"
+ROUNDING,TXN-00371,3579.599,3579.59,0.009,"differs by 0.009 - below per-row tolerance, only visible when summed"
+TIMING,TXN-00373,4570.70,,4570.70,created at month end; bank settlement expected next month
+TIMING,TXN-00374,3586.59,,3586.59,created at month end; bank settlement expected next month
+ROUNDING,TXN-00376,2422.758,2422.75,0.008,"differs by 0.008 - below per-row tolerance, only visible when summed"
+ROUNDING,TXN-00378,4729.936,4729.93,0.006,"differs by 0.006 - below per-row tolerance, only visible when summed"
+TIMING,TXN-00388,3911.84,,3911.84,created at month end; bank settlement expected next month
+TIMING,TXN-00390,4209.43,,4209.43,created at month end; bank settlement expected next month
+TIMING,TXN-00392,1319.00,,1319.00,created at month end; bank settlement expected next month
+TIMING,TXN-00393,514.41,,514.41,created at month end; bank settlement expected next month
+ROUNDING,TXN-00394,4139.592,4139.59,0.002,"differs by 0.002 - below per-row tolerance, only visible when summed"
+ROUNDING,TXN-00396,477.553,477.55,0.003,"differs by 0.003 - below per-row tolerance, only visible when summed"
+PRIOR_MONTH_CARRYOVER,TXN-S0001,,249.39,-249.39,settled in first days of month; probably last month's payment (confirm vs prior ledger)
+PRIOR_MONTH_CARRYOVER,TXN-S0002,,258.13,-258.13,settled in first days of month; probably last month's payment (confirm vs prior ledger)
+PRIOR_MONTH_CARRYOVER,TXN-S0003,,346.08,-346.08,settled in first days of month; probably last month's payment (confirm vs prior ledger)
+PRIOR_MONTH_CARRYOVER,TXN-S0004,,1542.38,-1542.38,settled in first days of month; probably last month's payment (confirm vs prior ledger)
