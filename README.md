@@ -4,7 +4,13 @@
 
 [![Tests](https://img.shields.io/badge/pytest-19%2F19%20passed-brightgreen.svg)](test_reconcile.py)
 [![Python](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](requirements.txt)
-[![Streamlit](https://img.shields.io/badge/Streamlit-App-FF4B4B.svg)](app.py)
+[![Streamlit](https://img.shields.io/badge/Streamlit-Live%20App-FF4B4B.svg)](https://rohitthakur264-1ai-app-ocgaqy.streamlit.app/)
+
+---
+
+## 🌐 Live Deployed Application
+👉 **[Open Live Payments Reconciliation Dashboard on Streamlit](https://rohitthakur264-1ai-app-ocgaqy.streamlit.app/)**  
+*(Hosted live on Streamlit Community Cloud from this repository)*
 
 ---
 

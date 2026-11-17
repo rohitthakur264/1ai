@@ -15,14 +15,13 @@
 ## 2. Deployed Link & How to Run
 
 ### Live Web App (Streamlit Community Cloud)
-* **GitHub Repository**: Push this repository to GitHub.
-* **Deployment (Takes 2 minutes)**:
-  1. Go to [share.streamlit.io](https://share.streamlit.io).
-  2. Click **New app**.
-  3. Select your GitHub repository and branch `main`.
-  4. Set **Main file path** to `app.py`.
-  5. Click **Deploy!**
-* **Local Run**:
+* **Live Deployed App URL**: [https://rohitthakur264-1ai-app-ocgaqy.streamlit.app/](https://rohitthakur264-1ai-app-ocgaqy.streamlit.app/)
+* **GitHub Repository**: [https://github.com/rohitthakur264/1ai](https://github.com/rohitthakur264/1ai)
+* **Deployment Details**:
+  - Hosted on Streamlit Community Cloud (connected to branch `main`, entrypoint `app.py`).
+  - Interactive controls: Toggle between generating seeded synthetic datasets (400 rows, Oct 2026) or uploading custom platform & bank CSVs.
+  - Live inspection: Real-time calculation of accounting bridge, residual attribution, and filterable findings log.
+* **Local Run Alternative**:
   ```bash
   pip install -r requirements.txt
   streamlit run app.py
@@ -54,9 +53,18 @@
 
 ---
 
-## 4. Demo Video Script (2–3 Minutes)
+## 4. Demo Video & Recording Script
 
-Use Loom or OBS to record your screen following this script:
+### Automated Demo Video
+* **Video File**: `demo_video.mp4` (Included in repository & zip, 1080p walkthrough)
+* **What it shows**:
+  1. **Scene 1 (0:00–0:06)**: Metric cards showing initial unadjusted book gap of ₹50,295.36 (Platform ₹9,75,803.14 vs Bank ₹9,25,507.78).
+  2. **Scene 2 (0:06–0:12)**: The Accounting Bridge table showing full gap breakdown and zero unexplained residual (`0.000`).
+  3. **Scene 3 (0:12–0:18)**: Filtered view of 80 `ROUNDING` discrepancies (each < 0.01, aggregating to ₹0.387).
+  4. **Scene 4 (0:18–0:24)**: Isolation of `DUPLICATE_PLATFORM`, `DUPLICATE_BANK`, and 2 compliance `ORPHAN_REFUND` rows.
+  5. **Scene 5 (0:24–0:30)**: Pytest terminal execution verifying all 19 tests passing (`19 passed in 0.74s`).
+
+### Demo Video Script (For Live Loom / Screen Recording)
 
 | Timestamp | Screen Action | Spoken Narration |
 | :--- | :--- | :--- |
